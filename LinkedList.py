@@ -7,11 +7,26 @@ class LinkedList:
         self.tail = head
 
     def prepend(self, data):
+        """Add an item to the beginning of the list"""
 
         newNode = Node(data)
         newNode.next = self.head
         self.head = newNode
 
-        # if there is only 1 item set it as the tail
+        # if only one node, set it to tail
         if self.tail is None:
             self.tail = self.head
+
+    def append(self, data):
+        """Add an item to the end of the list"""
+
+        newNode = Node(data)
+
+        if self.tail is not None:
+            self.tail.next = newNode
+
+        self.tail = newNode
+
+        # if only one node set it to head
+        if self.head is None:
+            self.head = newNode
