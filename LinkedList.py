@@ -7,7 +7,7 @@ class LinkedList:
         self.tail = head
 
     def prepend(self, data):
-        """Add an item to the beginning of the list"""
+        """Add an item to the beginning of the list."""
 
         newNode = Node(data)
         newNode.next = self.head
@@ -18,7 +18,7 @@ class LinkedList:
             self.tail = self.head
 
     def append(self, data):
-        """Add an item to the end of the list"""
+        """Add an item to the end of the list."""
 
         newNode = Node(data)
 
@@ -32,8 +32,22 @@ class LinkedList:
             self.head = newNode
 
     def printList(self):
+        """Print each item in the list."""
         node = self.head
 
         while node is not None:
             print(node.data)
             node = node.next
+
+    def delete_from_head(self):
+        """Delete the first item of the list."""
+        if self.head is not None:
+            self.head = self.head.next
+
+    def delete_from_tail(self):
+        """Delete the last item of the list."""
+        if self.head is not None and self.tail is not None:
+            node = self.head
+            while node.next is not self.tail:
+                node = node.next
+            node.next = None
