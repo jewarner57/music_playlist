@@ -15,3 +15,6 @@ list.printList()
 
 print(list.find("Test"))
 print(list.find("last item"))
+print(list.delete("Test"))
+print(list.find("Test"))
+list.printList()

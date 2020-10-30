@@ -60,3 +60,20 @@ class LinkedList:
                 return True
             node = node.next
         return False
+
+    def delete(self, item):
+        """Deletes an item in the list, sends true if deleted, false if not."""
+        node = self.head
+        prev = None
+
+        while node is not None:
+            if node.data == item:
+                if prev is None:
+                    self.delete_from_head()
+                else:
+                    prev.next = node.next
+                return True
+
+            prev = node
+            node = node.next
+        return False
