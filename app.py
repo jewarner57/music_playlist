@@ -12,3 +12,6 @@ list.prepend("first item")
 list.printList()
 list.delete_from_tail()
 list.printList()
+
+print(list.find("Test"))
+print(list.find("last item"))

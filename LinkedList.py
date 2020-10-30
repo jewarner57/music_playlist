@@ -51,3 +51,12 @@ class LinkedList:
             while node.next is not self.tail:
                 node = node.next
             node.next = None
+
+    def find(self, item):
+        """Return true if item is found. Else return false"""
+        node = self.head
+        while node is not None:
+            if node.data == item:
+                return True
+            node = node.next
+        return False
