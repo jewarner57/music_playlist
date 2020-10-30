@@ -39,7 +39,11 @@ while not stopProgram:
     if command == "delete":
         print("enter song name to delete")
         name = input().lower()
-        LinkedList.delete(name)
+
+        if name == LinkedList.tail:
+            LinkedList.delete_from_tail()
+        else:
+            LinkedList.delete(name)
 
     if command == "print":
         print("--------------")

@@ -51,6 +51,7 @@ class LinkedList:
             while node.next is not self.tail:
                 node = node.next
             node.next = None
+            self.tail = node
 
     def find(self, item):
         """Return true if item is found. Else return false"""
@@ -91,4 +92,5 @@ class LinkedList:
             prev = curr
             curr = next
 
+        # Set the new head to be the last item
         self.head = prev
