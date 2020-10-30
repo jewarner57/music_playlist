@@ -77,3 +77,18 @@ class LinkedList:
             prev = node
             node = node.next
         return False
+
+    def reverse(self):
+        """Reverse the linked list"""
+
+        prev = None
+        curr = self.head
+
+        while curr is not None:
+            next = curr.next
+            curr.next = prev
+
+            prev = curr
+            curr = next
+
+        self.head = prev
