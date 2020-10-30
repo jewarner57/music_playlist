@@ -30,3 +30,10 @@ class LinkedList:
         # if only one node set it to head
         if self.head is None:
             self.head = newNode
+
+    def printList(self):
+        node = self.head
+
+        while node is not None:
+            print(node.data)
+            node = node.next
