@@ -5,24 +5,46 @@ print("--------------")
 print('Powered by LinkedList\u2122 technology.')
 print("--------------")
 
+LinkedList = LinkedList()
+commandList = ["append", "prepend",
+               "find", "reverse", "delete", "print", "exit"]
+stopProgram = False
 
-list = LinkedList()
+while not stopProgram:
+    print("--------------")
+    print("Enter a command: append, prepend, find, reverse, delete, print, exit")
+    command = input().lower()
+    while command not in commandList:
+        print("Enter a valid command")
+        command = input().lower()
 
-list.append("1")
-list.append("2")
-list.append("3")
-list.append("6")
-list.append("4")
+    if command == "append":
+        print("enter song name")
+        name = input().lower()
+        LinkedList.append(name)
 
-list.printList()
-list.reverse()
-list.printList()
+    if command == "prepend":
+        print("enter song name")
+        name = input().lower()
+        LinkedList.prepend(name)
 
-# list.printList()
-# list.delete_from_tail()
-# list.printList()
+    if command == "find":
+        print("enter song name to find")
+        name = input().lower()
+        print(f'Song Found: {LinkedList.find(name)}')
 
-# print(list.find("Test"))
-# print(list.find("last item"))
-# print(list.delete("Test"))
-# print(list.find("Test"))
+    if command == "reverse":
+        LinkedList.reverse()
+
+    if command == "delete":
+        print("enter song name to delete")
+        name = input().lower()
+        LinkedList.delete(name)
+
+    if command == "print":
+        print("--------------")
+        LinkedList.printList()
+
+    if command == "exit":
+        print("exiting...")
+        stopProgram = True
